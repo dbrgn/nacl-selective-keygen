@@ -23,7 +23,7 @@ fn main() {
 
     // Get pattern
     let pattern: String = args[1].to_string();
-    println!("Searching for keypair that starts with {}...", &pattern);
+    println!("Searching for keypair that starts with {}...\n", &pattern);
 
     // Run
     let mut i = 0;
@@ -35,9 +35,9 @@ fn main() {
         let pk_hex = to_hex_string(Box::new(pk.0));
         if pk_hex.starts_with(&pattern) {
             let sk_hex = to_hex_string(Box::new(sk.0));
-            println!("Public: {}", pk_hex);
-            println!("Secret: {}", sk_hex);
-            println!("Found key after {} iterations.", i);
+            println!("\n==> Public: {}", pk_hex);
+            println!("==> Secret: {}", sk_hex);
+            println!("\nFound key after {} iterations.", i);
             break;
         }
         i += 1;
